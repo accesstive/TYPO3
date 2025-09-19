@@ -40,6 +40,9 @@ The extension automatically injects the Accesstive assistance script on all fron
 - TYPO3: 10.4.0 - 13.4.99
 - PHP: 7.4.0 - 8.3.99
 
+## Automatic Code Review
+- Integration of auto code review by CodeRebbit
+
 ## Support
 
 For support and documentation, visit: https://accesstive.com
