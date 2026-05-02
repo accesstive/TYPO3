@@ -1,1 +1,10 @@
-
+categories:
+  accesstive:
+    label: 'Accesstive'
+    
+settings:
+  accesstive.dataToken:
+    label: 'Data Token'
+    category: accesstive
+    type: string
+    default: ''
