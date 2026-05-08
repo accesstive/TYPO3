@@ -1,0 +1,6 @@
+plugin.tx_accesstive { 
+    settings {
+        datatoken = {$plugin.tx_accesstive.settings.datatoken}
+    }
+}
+

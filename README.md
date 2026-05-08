@@ -37,7 +37,7 @@ The extension automatically injects the Accesstive assistance script on all fron
 
 ## Requirements
 
-- TYPO3: 10.4.0 - 13.4.99
+- TYPO3: 10.4.0 - 14.9.99
 - PHP: 7.4.0 - 8.3.99
 
 ## Support

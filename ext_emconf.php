@@ -21,10 +21,10 @@ $EM_CONF['accesstive'] = [
     'author_company' => 'Accesstive',
     'state' => 'stable',
     'clearCacheOnLoad' => 0,
-    'version' => '1.0.0',
+    'version' => '2.0.0',
     'constraints' => [
         'depends' => [
-            'typo3' => '10.4.0-13.4.99',
+            'typo3' => '10.4.0-14.9.99',
             'php' => '7.4.0-8.3.99'
         ],
         'conflicts' => [],

@@ -1,0 +1,6 @@
+plugin.tx_accesstive {
+    settings {
+      # cat=plugin.tx_accesstive/401; type=string; label= Data token
+      datatoken = 
+    }
+}
