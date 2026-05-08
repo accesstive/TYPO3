@@ -41,9 +41,12 @@ class AccesstiveScriptMiddleware implements MiddlewareInterface
         
         // Get the response body
         $body = (string) $response->getBody();
-        // Get data token details from setings using site sets
+        // Get data token details from settings using site sets
         $site = $request->getAttribute('site');
-        $dataToken = $site->getSettings()->get('accesstive.dataToken');
++       $dataToken = '';
++        if ($site !== null && method_exists($site, 'getSettings')) {
++            $dataToken = $site->getSettings()->get('accesstive.dataToken', '');
++        }
 
         if (empty($dataToken)) {
             $frontendTypoScript = $request->getAttribute('frontend.typoscript');
@@ -60,7 +63,13 @@ class AccesstiveScriptMiddleware implements MiddlewareInterface
             $script = '<script async src="https://cdn.accesstive.com/assistance.js" type="module"></script>';    
         }
         
-        $modifiedBody = str_ireplace('</body>', $script . '</body>', $body);
+        $closeTag = '</body>';
++       $pos = strripos($body, $closeTag);
++       if ($pos !== false) {
++            $modifiedBody = substr($body, 0, $pos) . $script . substr($body, $pos);
++       }else {
++            $modifiedBody = $body . $script;
++       }
         
         // Create new response with modified body
         return new HtmlResponse($modifiedBody, $response->getStatusCode(), $response->getHeaders());
